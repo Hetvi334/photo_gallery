@@ -1,0 +1,54 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload_Page</title>
+</head>
+<body>
+    <h2>Welcome to Upload page!</h2>    
+   
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="up_photos" class="form-label">Upload photo</label>
+          
+          <input type="file" class="form-control" id="up_photos" name="photo" required>
+          <div id="emailHelp" class="form-text"></div>
+        </div>
+    
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</body>
+</html>-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Page</title>
+</head>
+<body>
+    <h2>Welcome to the Upload Page!</h2>    
+    <!-- Form for uploading photos -->
+    <form action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="up_photos" class="form-label">Upload photo</label>
+            <input type="file" class="form-control" id="up_photos" name="photo" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    
+
+    <!--<form action="/upload" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="up_photos" class="form-label">Upload Photo</label>
+          <input type="file" class="form-control" id="up_photos" name="photo" required>
+        </div>
+    
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>-->
+</body>
+</html>

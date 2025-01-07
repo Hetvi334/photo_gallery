@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+</head>
+<body>
+    <h1>Photo Gallery</h1>
+    <p>Displaying the photos</p>
+    <ul>
+        {% for photo in photos %}
+            <li>
+                <!-- Displaying Image -->
+                <img src="{{ photo }}" >
+
+                <!-- Form to Delete the Image -->
+                <form action="{{ url_for('delete', filename=photo.split('/')[-1]) }}" method="POST">
+                    <button type="submit">Delete</button>
+                </form> 
+            </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('upload') }}">Go to Upload Page</a>
+
+    <!-- <a href="{{ url_for('upload') }}">Go to Upload Page</a> -->
+    <!--forms
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="up_photos" class="form-label">Upload photo</label>
+          <input type="file" class="form-control" id="up_photos" name="photo"  >
+          <div id="emailHelp" class="form-text"></div>
+        </div>
+    
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>-->
+    
+</body>
+</html>
